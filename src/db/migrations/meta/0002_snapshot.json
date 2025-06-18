@@ -1,6 +1,6 @@
 {
-  "id": "ceb05ff2-8336-46e4-886b-2f9468186542",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "2cb7bf20-67f3-47f8-a55d-617ced44967b",
+  "prevId": "fe2cc2b4-f2dd-4ea3-87d4-e0a411d8571e",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -155,6 +155,13 @@
           "type": "text",
           "primaryKey": false,
           "notNull": false
+        },
+        "date": {
+          "name": "date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
         },
         "created_at": {
           "name": "created_at",

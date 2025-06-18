@@ -5,15 +5,36 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1750046116573,
-      "tag": "0000_redundant_reavers",
+      "when": 1750143980145,
+      "tag": "0000_past_aaron_stack",
       "breakpoints": true
     },
     {
       "idx": 1,
       "version": "7",
-      "when": 1750064694815,
-      "tag": "0001_military_malice",
+      "when": 1750146115101,
+      "tag": "0001_rich_colossus",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1750146203317,
+      "tag": "0002_chunky_tiger_shark",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1750146294937,
+      "tag": "0003_striped_old_lace",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1750146446862,
+      "tag": "0004_huge_triton",
       "breakpoints": true
     }
   ]
