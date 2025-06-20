@@ -2,6 +2,15 @@ import { db } from "@/db";
 import { categories, expenses } from "@/db/schema";
 import { and, eq, gte, lt, sql } from "drizzle-orm";
 
+export async function getExpense(id: number, userId: string) {
+  const expense = await db
+    .select()
+    .from(expenses)
+    .where(and(eq(expenses.id, id), eq(expenses.userId, userId)));
+
+  return expense[0];
+}
+
 export async function getTotalExpenseThisMonth(userId: string | undefined) {
   const now = new Date();
   const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
