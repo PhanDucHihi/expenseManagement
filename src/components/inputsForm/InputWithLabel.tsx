@@ -15,12 +15,14 @@ type Props<S> = {
   nameInSchema: keyof S & string;
   fieldTitle: string;
   castToNumber?: boolean;
+  className?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 export default function InputWithLabel<S>({
   nameInSchema,
   fieldTitle,
   castToNumber = false,
+  className,
   ...props
 }: Props<S>) {
   const form = useFormContext();
@@ -34,17 +36,26 @@ export default function InputWithLabel<S>({
           <FormLabel>{fieldTitle}</FormLabel>
           <FormControl>
             <Input
+              placeholder={`Enter ${fieldTitle}`}
+              className={`${className}`}
               {...field}
               {...props}
+              value={field.value ?? ""}
               onChange={(e) => {
                 const raw = e.target.value;
-                console.log(raw);
 
-                const numberPattern = /^(0|[1-9]\d*)(\.\d+)?$/;
                 if (castToNumber) {
-                  if (numberPattern.test(raw)) {
-                    field.onChange(Number(raw));
+                  // Cho phép input trống
+                  if (raw === "") {
+                    field.onChange(undefined);
+                  } else {
+                    const numberPattern = /^(0|[1-9]\d*)(\.\d+)?$/;
+                    if (numberPattern.test(raw)) {
+                      field.onChange(Number(raw));
+                    }
                   }
+                } else {
+                  field.onChange(raw);
                 }
               }}
             />

@@ -13,6 +13,8 @@ export const expenseInsertSchema = createInsertSchema(expenses).extend({
 });
 
 export const expenseUpdateSchema = createUpdateSchema(expenses);
+
+
 export type expenseUpdateSchemaType = z.infer<typeof expenseUpdateSchema>;
 
 
